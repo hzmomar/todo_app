@@ -1,4 +1,4 @@
-import 'package:todo/core/helper/enum.dart';
+import 'package:todo/core/shared/enum.dart';
 
 class FlavorSettings {
   FlavorSettings({

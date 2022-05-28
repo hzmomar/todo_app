@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:todo/core/presentation/app_widget.dart';
+import 'package:todo/core/shared/enum.dart';
+import 'package:todo/core/shared/flavor_manager.dart';
 
-import 'package:todo/core/helper/enum.dart';
-import 'package:todo/core/helper/flavor_manager.dart';
-import 'package:todo/main.dart';
-
-void main(){
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
@@ -13,5 +13,9 @@ void main(){
     env: AppEnvironment.dev,
   );
 
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: AppWidget(),
+    ),
+  );
 }

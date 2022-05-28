@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:todo/core/helper/enum.dart';
-import 'package:todo/core/helper/flavor_manager.dart';
-import 'package:todo/main.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:todo/core/presentation/app_widget.dart';
+import 'package:todo/core/shared/enum.dart';
+import 'package:todo/core/shared/flavor_manager.dart';
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,5 +13,9 @@ void main(){
     env: AppEnvironment.stage,
   );
 
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: AppWidget(),
+    ),
+  );
 }
