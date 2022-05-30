@@ -32,6 +32,9 @@ flutter run --flavor dev -t lib/main_dev.dart
 flutter run --flavor Debug-Dev -t lib/main_dev.dart
 ```
 
+
+> Download android apk [here](https://drive.google.com/file/d/16Cdy4yIEg04-WKcUm2K62qkekOPwTHPT/view?usp=sharing)
+
 ## 🎯 Test 
 
 Unit test is implemented to ensure the quality of the code. To execute run below command in terminal. 
