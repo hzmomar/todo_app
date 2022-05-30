@@ -10,21 +10,21 @@ void main() {
 
   group('Todo Notifier', () {
     test('by default no list available', () {
-      expect(mockTodoProvider.debugState.length, 1);
+      expect(mockTodoProvider.debugState.length, 0);
     });
-    test('When Add todo then the list size become 2', () {
+    test('When Add todo then the list size become 1', () {
       mockTodoProvider.addTodo(
         title: 'mock title',
         startDate: DateTime.now(),
         endDate: DateTime.now(),
       );
 
-      expect(mockTodoProvider.debugState.length, 2);
+      expect(mockTodoProvider.debugState.length, 1);
     });
-    test('When tick completed for index 1, the status will return Completed',
+    test('When tick completed checkbox, the status will return Completed',
         () {
-      mockTodoProvider.toggleStatus(1);
-      expect(mockTodoProvider.debugState[1].status, 'Completed');
+      mockTodoProvider.toggleStatus(0);
+      expect(mockTodoProvider.debugState[0].status, 'Completed');
     });
 
     test('The date format should follow dd MMM yyyy', () {
